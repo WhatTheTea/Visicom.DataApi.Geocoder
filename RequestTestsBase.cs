@@ -2,6 +2,7 @@ using System.Threading.Tasks;
 using FluentAssertions;
 using Visicom.DataApi.Geocoder.Abstractions;
 using WhatTheTea.SprotyvMap.Data;
+using WhatTheTea.SprotyvMap.Data.Primitives;
 using Xunit;
 
 namespace Visicom.DataApi.Geocoder.Tests;

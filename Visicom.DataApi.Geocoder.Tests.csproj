@@ -21,5 +21,11 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\Visicom.DataApi.Geocoder\Visicom.DataApi.Geocoder.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Update="TestData\IdealResponse.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
   
 </Project>

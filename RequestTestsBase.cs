@@ -6,7 +6,7 @@ using Xunit;
 
 namespace Visicom.DataApi.Geocoder.Tests;
 
-public class RequestTestsBase
+public abstract class RequestTestsBase
 {
     protected IGeocoder Geocoder { get; init; }
     

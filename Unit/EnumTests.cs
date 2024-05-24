@@ -1,10 +1,8 @@
 using FluentAssertions;
-using Visicom.DataApi.Geocoder;
 using Visicom.DataApi.Geocoder.Enums;
-using WhatTheTea.SprotyvMap.Primitives;
 using Xunit;
 
-namespace Visicom.DataApi.Geocoder.Tests;
+namespace Visicom.DataApi.Geocoder.Tests.Unit;
 
 public class EnumTests
 {

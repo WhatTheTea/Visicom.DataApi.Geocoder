@@ -3,7 +3,8 @@ using System.Net.Http;
 using System.Net.Mime;
 using System.Web;
 using RichardSzalay.MockHttp;
-using Visicom.DataApi.Geocoder.Enums;
+using WhatTheTea.Visicom.Geocoder;
+using WhatTheTea.Visicom.Geocoder.Enums;
 
 namespace Visicom.DataApi.Geocoder.Tests.Unit;
 

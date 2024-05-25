@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 using FluentAssertions;
-using Visicom.DataApi.Geocoder.Abstractions;
+using WhatTheTea.Visicom.Geocoder.Abstractions;
 using WhatTheTea.SprotyvMap.Shared.Primitives;
 using Xunit;
 

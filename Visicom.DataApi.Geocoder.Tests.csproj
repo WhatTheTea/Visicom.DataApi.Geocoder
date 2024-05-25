@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Visicom.DataApi.Geocoder\Visicom.DataApi.Geocoder.csproj" />
+    <ProjectReference Include="..\..\src\WhatTheTea.Visicom.Geocoder\WhatTheTea.Visicom.Geocoder.csproj" />
   </ItemGroup>
 
   <ItemGroup>

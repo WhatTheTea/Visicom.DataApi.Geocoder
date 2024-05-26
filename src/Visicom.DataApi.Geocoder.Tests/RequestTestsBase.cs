@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
 using FluentAssertions;
 using Visicom.DataApi.Geocoder.Abstractions;
-using WhatTheTea.SprotyvMap.Shared.Primitives;
+using Visicom.DataApi.Geocoder.Data;
 using Xunit;
 
 namespace Visicom.DataApi.Geocoder.Tests;
@@ -16,6 +16,6 @@ public abstract class RequestTestsBase
         var result = await Geocoder.GetCoordinatesAsync("м. Київ, вул. Хрещатик, 26");
 
         result.Should()
-            .BeEquivalentTo(new MapPoint(50.448847,30.521626));
+            .BeEquivalentTo(new Coordinates(50.448847,30.521626));
     }
 }

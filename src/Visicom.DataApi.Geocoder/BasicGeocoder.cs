@@ -1,9 +1,9 @@
 using System.Net.Http.Json;
 using System.Text;
 using Visicom.DataApi.Geocoder.Abstractions;
+using Visicom.DataApi.Geocoder.Data;
 using Visicom.DataApi.Geocoder.Enums;
 using Visicom.DataApi.Geocoder.Extensions;
-using WhatTheTea.SprotyvMap.Shared.Primitives;
 
 namespace Visicom.DataApi.Geocoder;
 
@@ -22,19 +22,19 @@ public class BasicGeocoder : IGeocoder
 
     public void SetOptions(IRequestOptions options) => _options = options;
 
-    public MapPoint GetCoordinates(string searchTerm, bool isByWholeWord = false)
+    public Coordinates GetCoordinates(string searchTerm, bool isByWholeWord = false)
         => GetCoordinatesAsync(searchTerm, isByWholeWord)
             .ConfigureAwait(false)
             .GetAwaiter().GetResult();
 
-    public async Task<MapPoint> GetCoordinatesAsync(string searchTerm, bool isByWholeWord = false)
+    public async Task<Coordinates> GetCoordinatesAsync(string searchTerm, bool isByWholeWord = false)
     {
         var requestUrl = BuildRequestUrl(searchTerm, isByWholeWord);
         var response = await _httpClient.GetAsync(requestUrl);
         var data = await response.EnsureSuccessStatusCode()
             .Content
             .ReadFromJsonAsync<Data.Response>();
-        var point = new MapPoint(data?.GeoCentroid.Coordinates[1] ?? 0, 
+        var point = new Coordinates(data?.GeoCentroid.Coordinates[1] ?? 0, 
             data?.GeoCentroid.Coordinates[0] ?? 0);
         return point;
     }

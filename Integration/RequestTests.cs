@@ -1,7 +1,6 @@
 using System;
 using System.Net.Http;
-using WhatTheTea.Visicom.Geocoder;
-using WhatTheTea.Visicom.Geocoder.Enums;
+using Visicom.DataApi.Geocoder.Enums;
 
 namespace Visicom.DataApi.Geocoder.Tests.Integration;
 

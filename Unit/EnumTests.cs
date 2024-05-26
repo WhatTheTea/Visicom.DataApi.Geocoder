@@ -1,5 +1,5 @@
 using FluentAssertions;
-using WhatTheTea.Visicom.Geocoder.Enums;
+using Visicom.DataApi.Geocoder.Enums;
 using Xunit;
 
 namespace Visicom.DataApi.Geocoder.Tests.Unit;

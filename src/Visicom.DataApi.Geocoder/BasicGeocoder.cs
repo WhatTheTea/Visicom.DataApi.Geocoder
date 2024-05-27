@@ -34,8 +34,8 @@ public class BasicGeocoder : IGeocoder
         using var dataStream = await response.EnsureSuccessStatusCode()
             .Content.ReadAsStreamAsync();
         var data = await JsonSerializer.DeserializeAsync<Response>(dataStream);
-        var point = new Coordinates(data?.GeoCentroid.Coordinates[1] ?? 0, 
-            data?.GeoCentroid.Coordinates[0] ?? 0);
+        var point = new Coordinates(data?.GeoCentroid?.Coordinates[1] ?? 0, 
+            data?.GeoCentroid?.Coordinates[0] ?? 0);
         return point;
     }
 

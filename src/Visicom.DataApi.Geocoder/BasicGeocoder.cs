@@ -1,3 +1,4 @@
+using System.Net;
 using System.Text;
 using System.Text.Json;
 using Visicom.DataApi.Geocoder.Abstractions;
@@ -31,11 +32,17 @@ public class BasicGeocoder : IGeocoder
     {
         var requestUrl = BuildRequestUrl(searchTerm, isByWholeWord);
         var response = await _httpClient.GetAsync(requestUrl);
+
+        if (response.StatusCode == HttpStatusCode.Unauthorized)
+        {
+            throw new ArgumentException("API key is not valid");
+        }
+        
         using var dataStream = await response.EnsureSuccessStatusCode()
             .Content.ReadAsStreamAsync();
         var data = await JsonSerializer.DeserializeAsync<Response>(dataStream);
-        var point = new Coordinates(data?.GeoCentroid.Coordinates[1] ?? 0, 
-            data?.GeoCentroid.Coordinates[0] ?? 0);
+        var point = new Coordinates(data?.GeoCentroid?.Coordinates[1] ?? 0, 
+            data?.GeoCentroid?.Coordinates[0] ?? 0);
         return point;
     }
 

@@ -1,3 +1,3 @@
 namespace Visicom.DataApi.Geocoder.Data;
 
-public record Coordinates(double Latitude, double Longitude);
+public record struct Coordinates(double Latitude, double Longitude);

@@ -16,7 +16,7 @@
     <RepositoryUrl>https://github.com/WhatTheTea/Visicom.DataApi.Geocoder</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <Version>0.1.0-alpha</Version>
+    <Version>0.1.2-alpha</Version>
     <Authors>Oleksii "WhatTheTea" Silchenko</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>

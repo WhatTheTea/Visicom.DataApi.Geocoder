@@ -19,7 +19,7 @@ public static class StringBuilderExtensions
         
         if (isFirst)
         {
-            builder[builder.Length-2] = '?';
+            builder[builder.Length-1] = '?';
         }
         else
         {

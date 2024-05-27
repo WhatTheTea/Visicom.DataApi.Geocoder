@@ -1,13 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    
     <IsPackable>false</IsPackable>
-    
     <UserSecretsId>c6e4a534-b8ed-4880-8fc9-ee6e844cc2bb</UserSecretsId>
-    
-    <TargetFramework>netstandard2.0</TargetFramework>
-    
+    <TargetFramework>net8.0</TargetFramework>
     <LangVersion>default</LangVersion>
   </PropertyGroup>
 

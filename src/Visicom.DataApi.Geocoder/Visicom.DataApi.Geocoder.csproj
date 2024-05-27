@@ -14,12 +14,18 @@
       Library to use Visicom's DataAPI geocode endpoint.
     </Description>
     <RepositoryUrl>https://github.com/WhatTheTea/Visicom.DataApi.Geocoder</RepositoryUrl>
-    <PackageLicenseUrl>https://github.com/WhatTheTea/Visicom.DataApi.Geocoder/blob/main/LICENSE</PackageLicenseUrl>
+    <License>LICENSE</License>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <Version>0.1.0-alpha</Version>
     <Authors>Oleksii "WhatTheTea" Silchenko</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
+  <ItemGroup Label="Docs">
+    <None Include="..\..\README.md" Pack="true" PackagePath="\"/>
+    <None Include="..\..\LICENSE" Pack="true" PackagePath="\"/>
+  </ItemGroup>
+  
   <ItemGroup>
     <PackageReference Include="System.Text.Json" Version="8.0.3" />
   </ItemGroup>

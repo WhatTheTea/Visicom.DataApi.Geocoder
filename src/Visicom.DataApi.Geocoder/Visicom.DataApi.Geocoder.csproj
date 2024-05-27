@@ -13,6 +13,7 @@
     <Description>
       Library to use Visicom's DataAPI geocode endpoint.
     </Description>
+    <RepositoryUrl>https://github.com/WhatTheTea/Visicom.DataApi.Geocoder</RepositoryUrl>
     <Version>0.1.0-alpha</Version>
     <Authors>Oleksii "WhatTheTea" Silchenko</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>

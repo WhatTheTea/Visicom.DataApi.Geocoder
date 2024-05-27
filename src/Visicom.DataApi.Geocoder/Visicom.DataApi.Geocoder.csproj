@@ -6,6 +6,17 @@
     <Nullable>enable</Nullable>
     <LangVersion>default</LangVersion>
   </PropertyGroup>
+  
+  <PropertyGroup Label="NuGet">
+    <PackageId>Visicom.DataApi.Geocoder</PackageId>
+    <PackageTags>Visicom;Geocode;Coordinates;Ukraine</PackageTags>
+    <Description>
+      Library to use Visicom's DataAPI geocode endpoint.
+    </Description>
+    <Version>0.1.0-alpha</Version>
+    <Authors>Oleksii "WhatTheTea" Silchenko</Authors>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="System.Text.Json" Version="8.0.3" />

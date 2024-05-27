@@ -1,4 +1,5 @@
 using System.IO;
+using System.Net;
 using System.Net.Http;
 using System.Net.Mime;
 using System.Web;
@@ -36,8 +37,8 @@ public class RequestTests : RequestTestsBase
         {
             var apiKeyInvalidResponse = File.ReadAllText(ApiKeyInvalidResponsePath);
             httpMock.When("*")
-                .With(x => HttpUtility.UrlDecode(x.RequestUri?.ToString()) == string.Format(RequestFormat, "ABCDEFGH", KyivSearchTerm))
-                .Respond(MediaTypeNames.Application.Json, apiKeyInvalidResponse);
+                .With(x => HttpUtility.UrlDecode(x.RequestUri?.ToString()) == string.Format(RequestFormat, "NOT_AN_APIKEY", KyivSearchTerm))
+                .Respond(HttpStatusCode.Unauthorized, MediaTypeNames.Application.Json, apiKeyInvalidResponse);
         }
 
         void AddIdealMock()

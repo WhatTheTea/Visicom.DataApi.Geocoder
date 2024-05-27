@@ -18,7 +18,7 @@ public class RequestTests : RequestTestsBase
         var testResponse = File.ReadAllText(TestResponsePath);
         httpMock.When("*")
             .With(x => HttpUtility.UrlDecode(x.RequestUri?.ToString()) == KyivRequest)
-            .Respond(MediaTypeNames.Application.Json, testResponse);
+            .Respond("application/json", testResponse);
         
         Geocoder = BuildGeocoder(httpMock.ToHttpClient());
     }

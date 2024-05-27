@@ -1,5 +1,5 @@
-using System.Net.Http.Json;
 using System.Text;
+using System.Text.Json;
 using Visicom.DataApi.Geocoder.Abstractions;
 using Visicom.DataApi.Geocoder.Data;
 using Visicom.DataApi.Geocoder.Enums;
@@ -31,9 +31,9 @@ public class BasicGeocoder : IGeocoder
     {
         var requestUrl = BuildRequestUrl(searchTerm, isByWholeWord);
         var response = await _httpClient.GetAsync(requestUrl);
-        var data = await response.EnsureSuccessStatusCode()
-            .Content
-            .ReadFromJsonAsync<Data.Response>();
+        using var dataStream = await response.EnsureSuccessStatusCode()
+            .Content.ReadAsStreamAsync();
+        var data = await JsonSerializer.DeserializeAsync<Response>(dataStream);
         var point = new Coordinates(data?.GeoCentroid.Coordinates[1] ?? 0, 
             data?.GeoCentroid.Coordinates[0] ?? 0);
         return point;
@@ -54,8 +54,8 @@ public class BasicGeocoder : IGeocoder
 
     private void AppendOptions(StringBuilder requestBuilder)
     {
-        var categoriesString = string.Join(',', _options.Categories.Select(x => x.ToRequestString()));
-        var excludeCategoriesString = string.Join(',', _options.ExcludeCategories.Select(x => x.ToRequestString()));
+        var categoriesString = string.Join(",", _options.Categories.Select(x => x.ToRequestString()).ToArray());
+        var excludeCategoriesString = string.Join(",", _options.ExcludeCategories.Select(x => x.ToRequestString()));
 
         requestBuilder.AppendParam("ci", categoriesString)
             .AppendParam("ce", excludeCategoriesString)

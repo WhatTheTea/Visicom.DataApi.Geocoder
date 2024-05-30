@@ -20,7 +20,7 @@ public class RequestOptions : IRequestOptions
         {
             if (string.IsNullOrWhiteSpace(value))
             {
-                throw new ArgumentException("Value was empty");
+                throw new ArgumentException("Visicom DataApi key value was empty");
             }
 
             _apikey = value;

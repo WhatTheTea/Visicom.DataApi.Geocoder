@@ -1,36 +1,45 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <LangVersion>default</LangVersion>
-  </PropertyGroup>
-  
-  <PropertyGroup Label="NuGet">
-    <PackageId>Visicom.DataApi.Geocoder</PackageId>
-    <PackageTags>Visicom;Geocode;Coordinates;Ukraine</PackageTags>
-    <Description>
-      Library to use Visicom's DataAPI geocode endpoint.
-    </Description>
-    <RepositoryUrl>https://github.com/WhatTheTea/Visicom.DataApi.Geocoder</RepositoryUrl>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
-    <Version>0.2.1-alpha</Version>
-    <Authors>Oleksii "WhatTheTea" Silchenko</Authors>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<LangVersion>default</LangVersion>
+	</PropertyGroup>
 
-  <ItemGroup Label="Docs">
-    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
-  </ItemGroup>
-  
-  <ItemGroup>
-    <PackageReference Include="IsExternalInit" Version="1.0.3">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="System.Text.Json" Version="8.0.3" />
-  </ItemGroup>
+	<PropertyGroup Label="NuGet">
+		<PackageId>Visicom.DataApi.Geocoder</PackageId>
+		<PackageTags>Visicom;Geocode;geocoder;Coordinates;Ukraine</PackageTags>
+		<Description>
+			Library to use Visicom's DataAPI geocode endpoint.
+		</Description>
+		<RepositoryUrl>https://github.com/WhatTheTea/Visicom.DataApi.Geocoder</RepositoryUrl>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<Version>1.0.0</Version>
+		<Authors>Oleksii "WhatTheTea" Silchenko</Authors>
+		<EnablePackageValidation>true</EnablePackageValidation>
+
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+
+		<!-- If all members are not documented, you can disable the compiler warnings -->
+		<NoWarn>$(NoWarn);CS1591</NoWarn>
+	</PropertyGroup>
+
+	<ItemGroup Label="Docs">
+		<None Include="..\..\README.md" Pack="true" PackagePath="\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="IsExternalInit" Version="1.0.3">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="DotNet.ReproducibleBuilds" Version="1.2.25">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="System.Text.Json" Version="9.0.2" />
+	</ItemGroup>
 
 </Project>

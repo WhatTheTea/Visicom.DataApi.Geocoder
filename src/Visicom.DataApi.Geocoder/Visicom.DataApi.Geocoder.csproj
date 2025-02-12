@@ -18,7 +18,6 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <Version>0.2.1-alpha</Version>
     <Authors>Oleksii "WhatTheTea" Silchenko</Authors>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup Label="Docs">

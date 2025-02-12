@@ -6,9 +6,7 @@
 
 Simple wrapper for Visicom geocoding APIs for .NET ecosystem
 
-# Examples
-
-### Geocoding address
+## How to get coordinates from address
 ```csharp
 var address = "м. Київ, вул. Хрещатик, 26";
 var apikey = "your-visicom-dapi-key"
